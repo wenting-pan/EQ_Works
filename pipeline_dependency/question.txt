@@ -1,0 +1,2 @@
+starting tasks: 73
+goal task: 36

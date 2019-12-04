@@ -201,3 +201,5 @@ if __name__ == "__main__":
     total_requests = request.count()
     model = model(analysis, total_requests)
     model.show()
+
+    spark.stop()
