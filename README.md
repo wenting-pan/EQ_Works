@@ -22,3 +22,8 @@ found in `/tmp/data/`.
 
 An explanation of the mathematical model created for Problem 4a can be found in `solution.md`. The bonus for that
 problem can be found in `bonus.txt`.
+
+The pipeline dependency script can be run within the `pipeline_dependency/` directory as:
+```
+python -m pipeline_dependency
+```
