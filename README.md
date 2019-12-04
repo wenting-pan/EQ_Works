@@ -16,7 +16,7 @@ pip install geopy
 spark-submit --master <spark-master> /tmp/data/solution.py 
 ``` 
 It will assume that the `DataSample.csv` and `POIList.csv` files can be
-found in `tmp/data/`.
+found in `/tmp/data/`.
 
 An explanation of the mathematical model created for Problem 4a can be found in `solution.md`. The bonus for that
 problem can be found in `bonus.txt`.
