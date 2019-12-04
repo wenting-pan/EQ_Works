@@ -86,37 +86,6 @@ def label(request, poi):
     return labeled
 
 
-def label2(request, poi):
-    """
-    Label each request record with the closest POI. Should a request record have multiple POIs that are equidistant
-    from it, all such POIs will be assigned to it.
-
-    :param request: Dataframe containing request records
-    :param poi: Dataframe containing POI records
-    :return: Dataframe containing request records with their assigned POI information
-        Schema (ReqID, Req_Latitude, Req_Longitude, POIID, POI_Latitude, POI_Longitude, Distance)
-    """
-
-    # Cross join the request and POI tables
-    cross = request.selectExpr('_ID AS ReqID', 'Latitude AS Req_Latitude', 'Longitude AS Req_Longitude') \
-        .crossJoin(poi.selectExpr('POIID', 'Latitude AS POI_Latitude', 'Longitude AS POI_Longitude'))
-
-    # Calculate distance from each request to each POI
-    distance_udf = udf(distance)
-    cross = cross.withColumn("Distance",
-                             distance_udf(cross.Req_Latitude, cross.Req_Longitude,
-                                          cross.POI_Latitude, cross.POI_Longitude))
-
-    # Get min distance for each request
-    min_dist = cross.groupBy(cross.ReqID.alias('RID')).agg(f.min(cross.Distance.cast('double')).alias('MinDistance'))
-
-    # Join back to only keep min distance rows
-    cross = cross.join(min_dist, [cross.ReqID == min_dist.RID, cross.Distance == min_dist.MinDistance]) \
-        .drop(f.col('MinDistance')).drop(f.col('RID'))
-
-    return cross
-
-
 def density(radius, count):
     """
     Calculate the density of a circle given its radius and count
