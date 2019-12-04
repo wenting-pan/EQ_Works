@@ -11,7 +11,7 @@ pip install pyspark
 pip install geopy
 ```
 
-#####*Note: `geopy` needs to be installed in both master and worker nodes
+##### Note: `geopy` needs to be installed in both master and worker nodes
 
 `solution.py` can be run via a `spark-submit`:
 ```
