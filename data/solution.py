@@ -13,14 +13,14 @@ def get_data():
     :return: DataFrames representing data found in DataSample and POIList csv files
     """
     request = spark.read.csv(
-        'DataSample.csv',
+        '/tmp/data/DataSample.csv',
         header=True,
         inferSchema=True,
         ignoreLeadingWhiteSpace=True,
         ignoreTrailingWhiteSpace=True
     )
     poi = spark.read.csv(
-        'POIList.csv',
+        '/tmp/data/POIList.csv',
         header=True,
         inferSchema=True,
         ignoreLeadingWhiteSpace=True,

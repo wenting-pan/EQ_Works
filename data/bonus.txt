@@ -1,0 +1,25 @@
+Hypothesis of POIs
+
+Assuming that:
+- Requests are made by people when they are relatively close to where they live
+- There is an equal chance for any person to make a request
+
+Hypothesis:
+- POI4 is situated somewhere more obscure than POI1/POI2 and POI3. This is because there are fewer requests made around
+the area and it has a much higher standard deviation signifying that there is much more scattering of people around that
+location
+- POI3 is more likely to be situated somewhere that encompasses requests from multiple closer cities vs POI1/POI2
+which seem to be more inclined to be a location with a wider spread of people
+    - These POIs cannot be accounting only for requests within one city. This is due to the high average request
+    distance being about 300km - 500km away from the POIs. It is further supported by the standard deviations also
+    being relatively high.
+    - For perspective, Toronto spans a maximum east-west distance of about 43km and north-south distance of 21km.
+    300km is about the distance between the EQ Works office in downtown Toronto and Algonquin Park. With this being
+    the average distance between a POI and a request, it is unlikely that the POI only represents requests for one
+    major city
+    - POI3 and POI1/POI2 both have roughly the same amount of requests assigned to them. However, POI3 has a smaller
+    standard deviation around the average distance of its requests as well as a much higher density. We can conclude
+    that POI3 could be situated somewhere with several cities or populations of people that are closer together, whereas
+    POI1/POI2 is somewhere with the same amount of people over a larger area
+
+
