@@ -1,38 +1,6 @@
 from itertools import permutations
 
 
-"""
-def compute_pipeline(starting_task, pipeline, running_tasks):
-    '''
-    print('Starting task:', starting_task)
-    print('pipeline:', pipeline)
-    print('running_tasks', running_tasks)
-    '''
-
-    if starting_task in pipeline:
-        return pipeline
-
-    last_task = pipeline[-1]
-    prereq_tasks = task_to_prereqs[last_task]
-
-    running_tasks.extend(prereq_tasks)
-
-    for x in list(permutations(prereq_tasks)):
-        pipeline.extend(x)
-        return compute_pipeline(starting_task, pipeline, running_tasks)
-
-
-def get_pipeline(starting_task, goal_task):
-
-    running_tasks = get_running_tasks(starting_task)
-
-    pipeline = [goal_task]
-
-    reverse_pipeline = compute_pipeline(starting_task, pipeline, running_tasks)
-    return reverse_pipeline[::-1]
-"""
-
-
 def get_running_tasks(task):
     """
     Given a task, get all tasks that must be running or finished executing for this task to be running
