@@ -11,7 +11,11 @@ pip install pyspark
 pip install geopy
 ```
 
-`solution.py` can be run via a `spark-submit`. It will assume that the `DataSample.csv` and `POIList.csv` files can be
+`solution.py` can be run via a `spark-submit`:
+```
+spark-submit --master <spark-master> /tmp/data/solution.py 
+``` 
+It will assume that the `DataSample.csv` and `POIList.csv` files can be
 found in `tmp/data/`.
 
 An explanation of the mathematical model created for Problem 4a can be found in `solution.md`. The bonus for that
